@@ -70,7 +70,7 @@ def main():
     ls_name = 'storageLinkedService'
 
     # Specify the name and key of your Azure Storage account
-    storage_string = SecureString('DefaultEndpointsProtocol=https;AccountName=spstoragemdp;AccountKey=KWI4qWCUc/dBUFmgJZrdExnlqDrb0U0HN9qZ96zztqUcFPTKx8epGojweTqL9QAb1wYNFRePYIspqQOHmCnY0Q==')
+    storage_string = SecureString('DefaultEndpointsProtocol=https;AccountName=<Azure storage account>;AccountKey=<Azure storage authentication key>')
 
     ls_azure_storage = AzureStorageLinkedService(connection_string=storage_string)
     ls = adf_client.linked_services.create_or_update(rg_name, df_name, ls_name, ls_azure_storage)
@@ -123,7 +123,7 @@ def main():
     # Create a trigger
     tr_name = 'mytrigger'
     scheduler_recurrence = ScheduleTriggerRecurrence(frequency='Minute', interval='15',start_time=datetime.now(), end_time=datetime.now() + timedelta(1), time_zone='UTC') 
-    pipeline_parameters = {'inputPath':'adftutorial/input', 'outputPath':'adftutorial/output'}
+    pipeline_parameters = {'inputPath':'adftutorial/inputpy', 'outputPath':'adftutorial/outputpy'}
     pipelines_to_run = []
     pipeline_reference = PipelineReference('copyPipeline')
     pipelines_to_run.append(TriggerPipelineReference(pipeline_reference, pipeline_parameters))

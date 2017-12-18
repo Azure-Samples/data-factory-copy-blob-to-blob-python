@@ -49,6 +49,9 @@ df_name = '<Data factory name>'
 
 # Specify your Active Directory application ID, application authentication key, and tenant ID
 credentials = ServicePrincipalCredentials(client_id='<AAD client ID>', secret='<AAD app authentication key>', tenant='<AAD tenant ID>')
+
+# Specify your Azure storage account name and key
+storage_string = SecureString('DefaultEndpointsProtocol=https;AccountName=<Azure storage account>;AccountKey=<Azure storage authentication key>')
 ```
 
 ## See Also
