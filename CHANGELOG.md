@@ -1,4 +1,4 @@
-## [project-title] Changelog
+## Python sample: create a data factory - Changelog
 
 <a name="x.y.z"></a>
 # x.y.z (yyyy-mm-dd)
